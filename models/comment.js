@@ -28,13 +28,13 @@ const Comment = sequelize.define("comment", {
 });
 
 
-// Comment.associate = models => {
-//     Comment.belongsToo(models.Message, {
-//         foreignKey: {
-//             allowNull: false
-//         }
-//     })
-// }
+Comment.associate = models => {
+    Comment.belongsToo(models.Message, {
+        foreignKey: {
+            allowNull: false
+        }
+    })
+}
 
 
 

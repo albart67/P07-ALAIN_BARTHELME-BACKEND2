@@ -7,9 +7,9 @@ const User = require("../models/user");
 router.get('/messages', (req, res, next) => {
 
   Message.findAll(
-    // {
-    //   include: [{ model: User }],
-    // }
+    {
+      include: [{ model: User }],
+    }
   )
     .then(messages => {
       //console.log(tasks)

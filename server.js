@@ -22,13 +22,14 @@ var Messages = require('./routes/messages')
 var Users = require('./routes/Users')
 var Comments = require('./routes/comment')
 
-// User.hasMany(Message);
-// Message.belongsTo(User);
+User.hasMany(Message);
+Message.belongsTo(User);
 
-// Message.hasMany(Comment);
-// Comment.belongsTo(Message);
+Message.hasMany(Comment);
+Comment.belongsTo(Message);
 
-
+User.hasMany(Comment);
+Comment.belongsTo(User);
 
 app.use('/users', Users)
 app.use('/api', Messages)
@@ -44,7 +45,7 @@ app.listen(port, function () {
   console.log('Server is running on port: ' + port)
 })
 
-test()
+//test()
 async function test() {
   await sequelize.sync({ force: true });
   await User.create({

@@ -22,10 +22,13 @@ const User = sequelize.define("user",
     password: {
       type: Sequelize.STRING
     },
+    isAdmin: {
+      type: Sequelize.BOOLEAN
+    },
     created: {
       type: Sequelize.DATE,
       defaultValue: Sequelize.NOW
-    }
+    },
   },
   {
     timestamps: false

@@ -18,6 +18,10 @@ const Message = sequelize.define("message", {
   message: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  imageURL: {
+    type: Sequelize.STRING,
+    allowNull: true
   }
 },
   {

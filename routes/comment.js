@@ -2,11 +2,15 @@ const express = require("express");
 const router = express.Router();
 const Comment = require("../models/comment");
 const User = require("../models/User");
+const Message = require("../models/Message")
 
 
 //Requète afficher tout  les messages
 router.get("/comments", (req, res) => {
-    Comment.findAll()
+    Comment.findAll({
+        include: [{ model: User }
+        ]
+    })
         .then(comment => res.send(comment))
         .catch(
             (error) => {
